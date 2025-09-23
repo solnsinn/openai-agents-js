@@ -1,4 +1,8 @@
 {
-  "recommendations": ["astro-build.astro-vscode", "vitest.explorer"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "vitest.explorer",
+    "meta.pyrefly"
+  ],
   "unwantedRecommendations": []
 }

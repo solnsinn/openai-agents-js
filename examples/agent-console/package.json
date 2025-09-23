@@ -1,0 +1,47 @@
+{
+  "name": "agent-console",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx scripts/preflight.ts && concurrently \"vite\" \"tsx server.ts\"",
+    "dev:client": "vite",
+    "dev:server": "tsx scripts/preflight.ts && tsx server.ts",
+    "build": "tsc && vite build",
+    "build:server": "tsc --project tsconfig.json --outDir dist-server --emitDeclarationOnly false",
+    "serve:static": "vite preview",
+    "start:prod": "node dist-server/server.js",
+    "start:prod:check": "node dist-server/preflight.cjs && node dist-server/server.js",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@openai/agents": "workspace:*",
+    "@openai/agents-core": "workspace:*",
+    "@openai/agents-openai": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.460.0",
+    "zod": "^3.23.8",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "concurrently": "^9.2.0",
+    "tsx": "^4.20.3",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
